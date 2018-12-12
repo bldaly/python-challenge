@@ -16,7 +16,7 @@ with open(csvpath, newline='') as csvfile:
 
     # print(csvreader)
 
-    # Read the header row first (skip this step if there is now header)
+    # Read the header row first 
     csv_header = next(csvreader)
     # print(f"CSV Header: {csv_header}")
     previous_row = next(csvreader)
@@ -39,10 +39,6 @@ with open(csvpath, newline='') as csvfile:
 change = sum(average_change)/len(average_change)
 month = len(calendar)
 total = sum(dollar_value)
-#max_value = max(dollar_value)
-#min_value = min(dollar_value)
-#print(month)
-#print(total)
 print(changed_value)
 
 
