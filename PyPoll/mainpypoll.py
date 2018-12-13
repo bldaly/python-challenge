@@ -3,10 +3,10 @@
 import os
 import csv
 
-number_votes = []
+
 voter_id = []
+county = []
 candidate_votes = []
-#average_change = []
 csvpath = os.path.join('', 'Resources', 'election_data.csv')
 
 
@@ -23,32 +23,31 @@ with open(csvpath, newline='') as csvfile:
 
    # Read each row of data after the header
    for row in csvreader:
-       voter_id.append(row[0])
-       #value = int(row[1])
-       #dollar_value.append(value)
+        voter_id.append(row[0])
+        county.append(row[1])
+        candidate_votes.append(row[2])
     
-#Re-do this section
-total_votes = int(len(number_votes))
-#total = sum(dollar_value)
-#max_value = max(dollar_value)
-#min_value = min(dollar_value)
-#print(month)
-#print(total)
-#print(max_value)
 
 
+total_votes = int(len(candidate_votes))
 
+khan_votes = (candidate_votes.count("Khan"))
+correy_votes = (candidate_votes.count("Correy"))
+li_votes = (candidate_votes.count("Li"))
+otooley_votes = (candidate_votes.count("O'Tooley"))
 
+total_votes
 
 print("Election Results")
 print("----------------------------")
-print("Total votes: " + len(number_votes))
-print("Khan: ")
-print("Correy: ")
-print("Li: ")
-print("O'Tooley: ")
+print("Total votes: " + str(len(voter_id)))
+print("Khan: " + str(int((khan_votes/total_votes)*100)) + "% (" + str(khan_votes) + ")")
+print("Correy: " + str(int((correy_votes/total_votes)*100)) + "% (" + str(correy_votes) + ")")
+print("Li: " + str(int((li_votes/total_votes)*100)) + "% (" + str(li_votes) + ")")
+print("O'Tooley: " + str(int((otooley_votes/total_votes)*100)) + "% (" + str(otooley_votes) + ")")
 print("----------------------------")
-print("Winner:" )
+print("Winner:" + "Khan" )
+print("-----------------------------")
 
 
 
